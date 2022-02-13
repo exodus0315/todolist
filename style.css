@@ -13,6 +13,14 @@ body {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+.mb-3 {
+  height: 3em;
+}
+
+#add-button {
+  width: 10%;
+}
+
 .task-area {
   border: 1px solid lightgray;
 }
@@ -41,4 +49,12 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 1em;
+}
+
+.task-done {
+  text-decoration: line-through;
+}
+
+.task-tabs div {
+  cursor: pointer;
 }
