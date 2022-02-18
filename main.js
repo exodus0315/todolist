@@ -9,6 +9,9 @@
 
 let userInput = document.getElementById("user-input");
 let inputButton = document.getElementById("input-button");
+let checkButton = document.getElementsByClassName(
+  "fa-solid fa-calendar-check fa-xl"
+);
 
 inputButton.addEventListener("click", inputTask);
 userInput.addEventListener("click", function () {
@@ -18,4 +21,8 @@ userInput.addEventListener("click", function () {
 function inputTask() {
   newTask = userInput.value;
   console.log(newTask);
+}
+
+function buttonControl() {
+  checkButton.style.color = "#ffffff";
 }

@@ -19,29 +19,27 @@ body {
 
 #title {
   font-size: 5vmin;
-}
-
-#task-add {
-  padding: 2vmin 0;
-}
-
-#user-input {
-  height: 2.5rem;
-  width: 85%;
-}
-
-#input-button {
-  height: 2.5rem;
-  width: 10%;
-  min-width: 3rem;
+  padding: 0 0 2vmin;
 }
 
 .task {
   display: flex;
-  text-align: center;
+  justify-content: space-between;
   border: 1px solid #dee2e6;
   border-top: none;
-  height: 3em;
+  padding: 0.5em;
+}
+
+.task p {
+  text-align: center;
+}
+
+.task-button button {
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 footer {
