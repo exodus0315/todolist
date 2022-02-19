@@ -23,8 +23,8 @@
             type="text"
             class="form-control"
             placeholder="Add new task"
-            aria-label="Add new task"
             id="user-input"
+            onKeypress="javascript:if(event.keyCode==13){addTask()}"
           />
           <button
             class="btn btn-outline-secondary"
@@ -36,44 +36,43 @@
         </div>
       </section>
       <section id="task-tabs">
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">All</a>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="all-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#all"
+              type="button"
+            >
+              All
+            </button>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Primary</a>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="notDone-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#notDone"
+              type="button"
+            >
+              Not Done
+            </button>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Not Done</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Done</a>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="done-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#done"
+              type="button"
+            >
+              Done
+            </button>
           </li>
         </ul>
       </section>
-      <section id="task-area">
-        <div class="task">
-          <p>First Test Text</p>
-          <div class="task-button">
-            <button><i class="fa-solid fa-calendar-check fa-xl"></i></button>
-            <button><i class="fa-solid fa-calendar-minus fa-xl"></i></button>
-          </div>
-        </div>
-        <div class="task">
-          <p>Second Test Text</p>
-          <div class="task-button">
-            <button><i class="fa-solid fa-calendar-check"></i></button>
-            <button><i class="fa-solid fa-calendar-minus"></i></button>
-          </div>
-        </div>
-        <div class="task">
-          <p>Third Test Text</p>
-          <div class="task-button">
-            <button><i class="fa-solid fa-calendar-check"></i></button>
-            <button><i class="fa-solid fa-calendar-minus"></i></button>
-          </div>
-        </div>
-      </section>
+      <section id="task-area"></section>
     </div>
     <footer>
       <address>

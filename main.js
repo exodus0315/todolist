@@ -9,20 +9,75 @@
 
 let userInput = document.getElementById("user-input");
 let inputButton = document.getElementById("input-button");
-let checkButton = document.getElementsByClassName(
-  "fa-solid fa-calendar-check fa-xl"
-);
+let checkButton = document.getElementById("check-button");
+let tabs = document.querySelectorAll("nav-item");
+let selectedTab = "all";
+let taskList = [];
+let checkedList = [];
 
-inputButton.addEventListener("click", inputTask);
-userInput.addEventListener("click", function () {
-  userInput.value = "";
-});
+inputButton.addEventListener("click", addTask);
 
-function inputTask() {
-  newTask = userInput.value;
-  console.log(newTask);
+function addTask() {
+  if (userInput.value == "") {
+    console.log("내용을 입력해주세요.");
+  } else {
+    let task = {
+      id: taskList.length,
+      taskContent: userInput.value,
+      isComplete: false,
+    };
+    taskList.push(task);
+  }
+
+  render();
+  resetInputTask();
 }
 
-function buttonControl() {
-  checkButton.style.color = "#ffffff";
+function render() {
+  let addHTML = "";
+  let list = [];
+  if (selectedTab == "all") {
+    list = taskList;
+  } else {
+    list = checkedList;
+  }
+
+  for (i = 0; i < taskList.length; i++) {
+    addHTML += `<div class="task">
+  <p>${list[i].taskContent}</p>
+  <div class="task-button">
+    <button id="check-button" onclick="checkTask(${list[i].id})">
+      <i class="fa-solid fa-calendar-check fa-xl"></i>
+    </button>
+    <button id="delete-button" onclick="deleteTask(${list[i].id})">
+      <i class="fa-solid fa-calendar-minus fa-xl"></i>
+    </button>
+  </div>
+</div>`;
+  }
+
+  document.getElementById("task-area").innerHTML = addHTML;
+}
+
+function resetInputTask() {
+  userInput.value = "";
+}
+
+function checkTask(id) {
+  for (i = 0; i < taskList.length; i++) {
+    if (id == taskList[i].id) {
+      taskList[i].isComplete = !taskList[i].isComplete;
+      console.log(taskList[i].isComplete);
+    }
+  }
+  render();
+}
+
+function deleteTask(id) {
+  for (i = 0; i < taskList.length; i++) {
+    if (id == taskList[i].id) {
+      taskList.splice(i, 1);
+    }
+  }
+  render();
 }
