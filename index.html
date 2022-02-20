@@ -40,7 +40,7 @@
           <li class="nav-item" role="presentation">
             <button
               class="nav-link active"
-              id="all-tab"
+              id="tab-all"
               data-bs-toggle="tab"
               data-bs-target="#all"
               type="button"
@@ -51,7 +51,7 @@
           <li class="nav-item" role="presentation">
             <button
               class="nav-link"
-              id="notDone-tab"
+              id="tab-notDone"
               data-bs-toggle="tab"
               data-bs-target="#notDone"
               type="button"
@@ -62,7 +62,7 @@
           <li class="nav-item" role="presentation">
             <button
               class="nav-link"
-              id="done-tab"
+              id="tab-done"
               data-bs-toggle="tab"
               data-bs-target="#done"
               type="button"
@@ -73,6 +73,16 @@
         </ul>
       </section>
       <section id="task-area"></section>
+      <div class="modal hidden">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <p>
+            내용을 입력하지 않으셨습니다.<br />
+            정확한 내용을 입력해주세요.
+          </p>
+          <button id="modal-close-button">Close</button>
+        </div>
+      </div>
     </div>
     <footer>
       <address>
