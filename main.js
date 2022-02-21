@@ -26,7 +26,9 @@ modalBackground.addEventListener("click", displayModal);
 
 window.document.onkeydown = function (event) {
   if (event.keyCode == 27) {
-    displayModal();
+    if (modal.classList == "modal") {
+      displayModal();
+    }
   }
 };
 
@@ -139,23 +141,6 @@ function filtering(event) {
   }
   render();
 }
-
-// function modalWindow() {
-//   modal.classList.toggle("show");
-//   if (modal.classList.contains("show")) {
-//     body.style.overflow = "hidden";
-//   }
-
-//   modal.addEventListener("click", (event) => {
-//     if (event.target === modal) {
-//       modal.classList.toggle("show");
-
-//       if (!modal.classList.contains("show")) {
-//         body.style.overflow = "auto";
-//       }
-//     }
-//   });
-// }
 
 function displayModal() {
   modal.classList.toggle("hidden");
